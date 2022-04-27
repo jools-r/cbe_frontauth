@@ -371,7 +371,10 @@ function cbe_frontauth_edit_article( $atts )
     elseif( $type == 'link' )
     {
         $path_parts[ '_txp_token' ] = form_token() ;
-        array_walk( $path_parts, create_function( '&$v, $k', '$v = $k."=".$v ;' ) ) ;
+        array_walk(
+            $path_parts,
+            function(&$v,$k) { $v = $k."=".$v; }
+        );
         $link = cbe_frontauth_backend() . '?' . join( '&', $path_parts ) ;
 
         return( cbe_frontauth_link( compact( 'link', 'label'
@@ -425,7 +428,11 @@ function _cbe_fa_init( $atts, $type )
     if( ($index=array_search( 'logged', $init_for )) !== false )
         $init_for[ $index ] = 'logout' ;
 
-    array_walk( $init_for, create_function( '&$v, $k, $p', '$v = $v."_".$p ;'), $type ) ;
+    array_walk(
+        $init_for,
+        function(&$v,$k,$p) { $v = $v."_".$p; },
+        $type
+    );
 
     if( ($init_list = @array_combine( $init_for, do_list( $value ) )) === false )
         return ;
