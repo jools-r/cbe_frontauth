@@ -71,6 +71,37 @@ if (!defined('txpinterface'))
         @include_once('zem_tpl.php');
 
 # --- BEGIN PLUGIN CODE ---
+
+/**************************************************
+ **
+ ** Register front-end tags
+ **
+ **************************************************/
+
+if (class_exists('\Textpattern\Tag\Registry')) {
+    Txp::get('\Textpattern\Tag\Registry')
+        ->register('cbe_frontauth')
+        ->register('cbe_frontauth_backend')
+        ->register('cbe_frontauth_box')
+        ->register('cbe_frontauth_if_connected')
+        ->register('cbe_frontauth_invite')
+        ->register('cbe_frontauth_edit_article')
+        ->register('cbe_frontauth_label')
+        ->register('cbe_frontauth_link')
+        ->register('cbe_frontauth_if_logged')
+        ->register('cbe_frontauth_login')
+        ->register('cbe_frontauth_loginwith')
+        ->register('cbe_frontauth_logname')
+        ->register('cbe_frontauth_logout')
+        ->register('cbe_frontauth_password')
+        ->register('cbe_frontauth_protect')
+        ->register('cbe_frontauth_redirect')
+        ->register('cbe_frontauth_reset')
+        ->register('cbe_frontauth_stay')
+        ->register('cbe_frontauth_submit')
+        ->register('cbe_frontauth_whois');
+}
+
 /**************************************************
  **
  ** Local language strings, possible customisation here
