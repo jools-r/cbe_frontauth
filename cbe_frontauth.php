@@ -17,7 +17,7 @@ $plugin['name'] = 'cbe_frontauth';
 // 1 = Plugin help is in raw HTML.  Not recommended.
 # $plugin['allow_html_help'] = 1;
 
-$plugin['version'] = '0.9.7';
+$plugin['version'] = '0.9.7.1';
 $plugin['author'] = 'Claire Brione';
 $plugin['author_uri'] = 'http://www.clairebrione.com/';
 $plugin['description'] = 'Manage backend connections from frontend';
@@ -708,6 +708,7 @@ function _cbe_fa_auth( $redir, $p_logout, $p_userid='', $p_password='', $p_stay=
 // -------------------------------------------------------------------
 function cbe_frontauth( $atts, $thing = null )
 {
+    include_once( txpath.'/lib/txplib_admin.php' ) ;
     include_once( txpath.'/include/txp_auth.php' ) ;
     global $txp_user ;
     static $inits = array( 'login_invite' => '' , 'logout_invite' => '' , 'tag_invite' => ''
