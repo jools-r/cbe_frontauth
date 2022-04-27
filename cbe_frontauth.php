@@ -17,7 +17,7 @@ $plugin['name'] = 'cbe_frontauth';
 // 1 = Plugin help is in raw HTML.  Not recommended.
 # $plugin['allow_html_help'] = 1;
 
-$plugin['version'] = '0.9.7.1';
+$plugin['version'] = '0.9.8';
 $plugin['author'] = 'Claire Brione';
 $plugin['author_uri'] = 'http://www.clairebrione.com/';
 $plugin['description'] = 'Manage backend connections from frontend';
@@ -1343,7 +1343,8 @@ value = setting to set or get, string or array.
 
 h2(#changelog). Changelog
 
-* 01 Jan 20 - v0.9.7.1 - Add line: include_once( txpath.'/lib/txplib_admin.php' ) ; for txp-4.8
+* 27 Apr 22 - v0.9.8 - Register tags, refactor deprecated function for PHP 7.3+ compatibility (jools-r)
+* 01 Jan 20 - v0.9.7.1 - Refactored help and include txplib_admin.php' for txp 4.8 compatibility (gas-kirito)
 * 20 Nov 15 - v0.9.7 - "Fix this":http://forum.textpattern.com/viewtopic.php?pid=296720#p296720
 * 07 Apr 14 - v0.9.6 - Error when passing presentational attributes from cbe_frontauth_edit_article to cbe_frontauth_link
 * 04 Apr 14 - v0.9.5 - Missing last access storage
