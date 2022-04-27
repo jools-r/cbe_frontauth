@@ -87,7 +87,7 @@ function _cbe_fa_lang()
                  , 'logout'               => gTxt( 'logout' )
                  , 'edit'                 => gTxt( 'edit' )
                  , 'change_password'      => gTxt( 'change_password' )
-                 , 'password_reset'       => gTxt( 'password_reset' ) 
+                 , 'password_reset'       => gTxt( 'password_reset' )
                  )
           ) ;
 }
@@ -403,7 +403,7 @@ function _cbe_fa_init( $atts, $type )
     return ;
 }
 
-// -- Retrieve user's info, if connected 
+// -- Retrieve user's info, if connected
 // -- textpattern/lib/txp_misc.php - is_logged_in() as a starting point
 // -------------------------------------------------------------------
 function _cbe_fa_logged_in( &$user, $txp_user = null )
@@ -477,7 +477,7 @@ function _cbe_fa_inout_process( $inout, $atts, $thing = '' )
                       , 'show_change' => '1'      )
                : array( 'show_stay'   => '0'
                       , 'show_reset'  => '1'      ) ;
-    $public_atts = lAtts( array ( 'invite'     => _cbe_fa_gTxt( ($inout == 'login') ? 'login_to_textpattern' 
+    $public_atts = lAtts( array ( 'invite'     => _cbe_fa_gTxt( ($inout == 'login') ? 'login_to_textpattern'
                                                                                     : '' )
                                 , 'tag_invite' => ''
                                 , 'label'      => _cbe_fa_gTxt( ($inout == 'login') ? 'log_in_button'
@@ -547,7 +547,7 @@ function _cbe_fa_button( $atts )
         $label = _cbe_fa_gTxt( ($type == 'logout' || $type == 'edit' ) ? $type : 'log_in_button' ) ;
 
     $out = fInput( 'submit', '', $label, (!$wraptag && $class) ? $class : '' ) ;
- 
+
     if( $type == 'logout' )
         $out .= hInput( 'p_logout', '1' ) ;
     elseif( $type == 'edit' )
@@ -561,7 +561,7 @@ function _cbe_fa_button( $atts )
 function _cbe_fa_link( $atts )
 {
     extract( $atts ) ; // 'link', 'target'
-    
+
     if( $target == '_get' )
     {
         $uri = serverSet( 'REQUEST_URI'  ) ;
@@ -738,7 +738,7 @@ function cbe_frontauth( $atts, $thing = null )
                 if( ! $cbe_fa_user[ 'name' ] ) _cbe_fa_logged_in( $cbe_fa_user ) ;
                 foreach( $atts[ 'value' ] as $type )
                     $whois[ $type ] = $cbe_fa_user[ $type ] ;
-                
+
                 return( $whois ) ;
             }
             else
