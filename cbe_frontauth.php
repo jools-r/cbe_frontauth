@@ -958,20 +958,6 @@ A few examples (in french) can be found in the "demonstration page":http://www.c
 
 Claire Brione - http://www.clairebrione.com/
 
-h2. Table of contents
-
-* "Features":#features
-* "Download, installation, support":#dl-install-supp
-* "Tags list":#tags-list
-* "Notations":#notations
-* "Quick start":#quick-start
-* "Take control on individual elements":#individual-elements
-* "Additional and special tags":#additional-tags
-* "Callbacks":#callbacks
-* "How-to: ideas and snippets":#how-to
-* "Advanced usage":#advanced-usage
-* "Changelog":#changelog
-
 h2(#features). Features
 
 * automatically generate a @<a href="#login-logout-box">login/logout box</a>@...
@@ -1060,7 +1046,7 @@ _It's time now to start using the plugin_: "allow users to login and logout":#lo
 
 @wraptag@, @class@, @break@ and @breakclass@ are supported by every tag and both default to **unset**.
 
-h3(#login-logout-box). Login/logout box: &lt;txp:cbe_frontauth_box /&gt;
+h3(#login-logout-box). Login/logout box: <txp:cbe_frontauth_box />
 
 bc.. <cbe_frontauth_box
   [ login_invite="Connect to textpattern | ..."
@@ -1083,7 +1069,7 @@ If you don't want "connected as" message, use as a container tag and put a blank
 
 bc. <txp:cbe_frontauth_box> </txp:cbe_frontauth_box>
 
-h3(#protect-parts). Protect parts of a page: &lt;txp:cbe_frontauth_protect /&gt;, &lt;txp:cbe_frontauth_if_logged /&gt; and &lt;txp:cbe_frontauth_if_connected /&gt;
+h3(#protect-parts). Protect parts of a page: <txp:cbe_frontauth_protect />, <txp:cbe_frontauth_if_logged /> and <txp:cbe_frontauth_if_connected />
 
 bc.. <txp:cbe_frontauth_protect
   [ name="none | comma-separated values"
@@ -1104,7 +1090,7 @@ You do this using the attributes @link@, @linklabel@, optionally @target@ ("_sel
 
 If you want to display the link anywhere else, or display more than one link, or conditionally show a link, prefer "<cbe_frontauth_link />":#link-generation
 
-h3(#login-method). Login method &lt;txp:cbe_frontauth_loginwith /&gt;
+h3(#login-method). Login method <txp:cbe_frontauth_loginwith />
 
 What to use as login name : username (as textpattern usually does), email, or auto for automatic detection.
 
@@ -1113,7 +1099,7 @@ What to use as login name : username (as textpattern usually does), email, or au
 bc.. <cbe_frontauth_loginwith
     value="auto | username | email" />
 
-h3(#automatic-redirect). Automatic redirect: &lt;txp:cbe_frontauth_redirect /&gt;
+h3(#automatic-redirect). Automatic redirect: <txp:cbe_frontauth_redirect />
 
 User will be automatically redirected after successful login and/or logout.
 Use this tag before any other cbe_frontauth_* as it sets redirection(s) for the whole page.
@@ -1141,7 +1127,7 @@ bc. <txp:cbe_frontauth_redirect for="login,logout" value="after_login_url,after_
 
 sets automatic redirection for both too
 
-h3(#setting-invites). Setting invites globally for the whole page: &lt;txp:cbe_frontauth_invite /&gt;
+h3(#setting-invites). Setting invites globally for the whole page: <txp:cbe_frontauth_invite />
 
 Works the same way "as above":#automatic-redirect:
 
@@ -1161,7 +1147,7 @@ bc. <txp:cbe_frontauth_invite for="login,logout,tag" invite="Please login,You ca
   ... and in the footer, for example ...
 <txp:cbe_frontauth_login invite="Say hello !" tag_invite="span" />
 
-h3(#setting-labels). Setting button and link labels globally for the whole page: &lt;txp:cbe_frontauth_label /&gt;
+h3(#setting-labels). Setting button and link labels globally for the whole page: <txp:cbe_frontauth_label />
 
 Works the same way "as above":#automatic-redirect too:
 
@@ -1172,7 +1158,7 @@ Can be overridden by any tag that has @label@ as attribute.
 
 h2(#individual-elements). Take control on individual elements
 
-h3(#login-area). Login area: &lt;txp:cbe_frontauth_login /&gt;
+h3(#login-area). Login area: <txp:cbe_frontauth_login />
 
 bc.. <txp:cbe_frontauth_login
   [ invite="Connect to textpattern | ..."
@@ -1199,7 +1185,7 @@ bc. <txp:cbe_frontauth_logname [label="Name|..." wraptag="..." class="..." break
 <txp:cbe_frontauth_reset [label="Password forgotten ?|..." wraptag="..." class="..." break="..." breakclass="..."] />
 <txp:cbe_frontauth_submit [label="Login|..." wraptag="..." class="..." break="..." breakclass="..."] />
 
-h3(#logout-area). Logout area: &lt;txp:cbe_frontauth_logout /&gt;
+h3(#logout-area). Logout area: <txp:cbe_frontauth_logout />
 
 bc.. <txp:cbe_frontauth_logout
   [ invite="none|..."
@@ -1221,7 +1207,7 @@ bc. <txp:cbe_frontauth_submit type="logout" [label="Logout|..." wraptag="..." cl
 
 h2(#additional-tags). Additional and special tags
 
-h3(#user-info). Connected user information: &lt;txp:cbe_frontauth_whois /&gt;
+h3(#user-info). Connected user information: <txp:cbe_frontauth_whois />
 
 bc. <txp:cbe_frontauth_whois
     [   type="[name][, RealName][, email][, privs][, last_access]"
@@ -1230,7 +1216,7 @@ bc. <txp:cbe_frontauth_whois
 
 @format@ applies to @last_access@ if present.
 
-h3(#path-backend). Path to Textpattern backend: &lt;txp:cbe_frontauth_backend /&gt;
+h3(#path-backend). Path to Textpattern backend: <txp:cbe_frontauth_backend />
 
 bc. <txp:cbe_frontauth_backend />
 
@@ -1246,7 +1232,7 @@ bc. <txp:cbe_frontauth_if_connected>
 
 p. <span class="accent">Why use a button rather than a link ?</span> Answer: as it is enclosed in an HTML form, it allows to go to the edit page without showing parameters in the URL.
 
-h3(#link-generation). Link generation: &lt;txp:cbe_frontauth_link /&gt;
+h3(#link-generation). Link generation: <txp:cbe_frontauth_link />
 
 bc. <txp:cbe_frontauth_link label="..." link="..." [target="_self|_blank|_get" wraptag="..." class="..." break="..." breakclass="..."] />
 
@@ -1372,7 +1358,7 @@ h2(#changelog). Changelog
 * 10 Jan 12 - v 0.8 - Introduces <txp:cbe_frontauth_loginwith />, "idea comes from another demand in the textpattern forum":http://forum.textpattern.com/viewtopic.php?pid=256632#p256632.
 * 05 Jan 12 - v0.7.1 - Documentation addenda
 * 06 Aug 11 - v0.7-beta
-** Introduces &lt;txp:cbe_frontauth_edit_article /&gt
+** Introduces <txp:cbe_frontauth_edit_article /&gt
 ** CSRF protection ready
 ** Documentation improvements
 * 29 Jul 11 - v0.6-beta
